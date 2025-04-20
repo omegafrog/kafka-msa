@@ -38,4 +38,8 @@ public class OrderService {
 	public OrderDto getOrder(Long id) {
 		return new OrderDto(orderRepository.findById(id));
 	}
+
+	public void deleteOrder(Long id) {
+		orderRepository.deleteById(id);
+	}
 }

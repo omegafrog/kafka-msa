@@ -6,6 +6,7 @@ import org.omegafrog.orderservice.domain.OrderDto;
 import org.omegafrog.orderservice.service.OrderService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,5 +40,10 @@ public class OrderController {
 	public ResponseEntity<OrderDto> getOrder(@PathVariable(name = "id") Long id){
 		OrderDto order = orderService.getOrder(id);
 		return ResponseEntity.ok(order);
+	}
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> deleteOrder(@PathVariable(name="id") Long id){
+		orderService.deleteOrder(id);
+		return ResponseEntity.ok().build();
 	}
 }

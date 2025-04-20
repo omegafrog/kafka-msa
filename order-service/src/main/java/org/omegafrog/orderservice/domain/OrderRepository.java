@@ -1,6 +1,5 @@
 package org.omegafrog.orderservice.domain;
 
-import java.util.Arrays;
 import java.util.List;
 
 public interface OrderRepository {
@@ -9,4 +8,6 @@ public interface OrderRepository {
 	List<Order> findAll();
 
 	Order findById(Long id);
+
+	void deleteById(Long id);
 }

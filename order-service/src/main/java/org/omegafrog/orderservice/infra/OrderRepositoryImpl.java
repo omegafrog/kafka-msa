@@ -30,4 +30,9 @@ public class OrderRepositoryImpl implements OrderRepository {
 		return jpaRepository.findById(id)
 			.orElseThrow(() -> new RuntimeException("Order not found"));
 	}
+
+	@Override
+	public void deleteById(Long id) {
+		jpaRepository.deleteById(id);
+	}
 }

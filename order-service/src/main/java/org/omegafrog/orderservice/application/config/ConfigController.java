@@ -1,4 +1,4 @@
-package org.omegafrog.orderservice.config;
+package org.omegafrog.orderservice.application.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;

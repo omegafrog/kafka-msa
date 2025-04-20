@@ -1,0 +1,31 @@
+package org.omegafrog.orderservice.service;
+
+import org.omegafrog.orderservice.application.OrderRequest;
+import org.omegafrog.orderservice.domain.Order;
+import org.omegafrog.orderservice.domain.OrderDto;
+import org.omegafrog.orderservice.domain.OrderLine;
+import org.omegafrog.orderservice.domain.OrderRepository;
+import org.omegafrog.orderservice.domain.Orderer;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+@Transactional
+public class OrderService {
+	private OrderRepository orderRepository;
+
+	public OrderService(OrderRepository orderRepository) {
+		this.orderRepository = orderRepository;
+	}
+
+	public OrderDto createOrder(OrderRequest orderRequest) {
+
+		return new OrderDto(orderRepository.save(new Order(new Orderer(
+			orderRequest.ordererName(),
+			orderRequest.ordererEmail()
+		), orderRequest.orderLines().stream().map(
+			orderLineDto -> new OrderLine(orderLineDto.getProductName(), orderLineDto.getQuantity(),
+				orderLineDto.getAmounts()
+			)).toList())));
+	}
+}

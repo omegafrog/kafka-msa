@@ -1,10 +1,10 @@
-package org.omegafrog.kafkamsa;
+package org.omegafrog.configserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class KafkaMsaApplicationTests {
+class ConfigServerApplicationTests {
 
 	@Test
 	void contextLoads() {

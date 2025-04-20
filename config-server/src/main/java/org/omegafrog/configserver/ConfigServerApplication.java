@@ -1,13 +1,14 @@
-package org.omegafrog.kafkamsa;
+package org.omegafrog.configserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
-public class KafkaMsaApplication {
+public class ConfigServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(KafkaMsaApplication.class, args);
+		SpringApplication.run(ConfigServerApplication.class, args);
 	}
 
 }

@@ -1,0 +1,17 @@
+server:
+  port: 8888
+
+spring:
+  profiles:
+    include: secret
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/omegafrog/config-repo.git
+          clone-on-start: true
+          search-paths: .
+          username: omegafrog
+          password: ON_SECRET

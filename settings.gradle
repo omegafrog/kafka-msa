@@ -1,1 +1,8 @@
 rootProject.name = 'kafka-msa'
+
+include 'config-server'
+include 'eureka-server'
+include 'api-gateway'
+include 'order-service'
+include 'inventory-service'
+include 'notification-service'

@@ -1,5 +1,7 @@
 package org.omegafrog.orderservice.service;
 
+import java.util.List;
+
 import org.omegafrog.orderservice.application.OrderRequest;
 import org.omegafrog.orderservice.domain.Order;
 import org.omegafrog.orderservice.domain.OrderDto;
@@ -27,5 +29,9 @@ public class OrderService {
 			orderLineDto -> new OrderLine(orderLineDto.getProductName(), orderLineDto.getQuantity(),
 				orderLineDto.getAmounts()
 			)).toList())));
+	}
+
+	public List<OrderDto> getOrders() {
+		return orderRepository.findAll().stream().map(OrderDto::new).toList();
 	}
 }

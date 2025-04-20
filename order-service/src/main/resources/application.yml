@@ -7,8 +7,13 @@ spring:
 
   cloud:
     config:
+      fail-fast: false
+      retry:
+        max-attempts: 6
+        initial-interval: 1000
       uri: http://localhost:8888  # Config Server URL
       profile: default            # default는 생략 가능
+
 
 # 필요 시 actuator 설정
 management:

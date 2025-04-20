@@ -1,4 +1,4 @@
-package org.omegafrog.orderservice.application;
+package org.omegafrog.orderservice.ui;
 
 import java.util.List;
 

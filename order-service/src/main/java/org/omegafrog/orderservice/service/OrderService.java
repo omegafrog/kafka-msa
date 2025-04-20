@@ -2,7 +2,7 @@ package org.omegafrog.orderservice.service;
 
 import java.util.List;
 
-import org.omegafrog.orderservice.application.OrderRequest;
+import org.omegafrog.orderservice.ui.OrderRequest;
 import org.omegafrog.orderservice.domain.Order;
 import org.omegafrog.orderservice.domain.OrderDto;
 import org.omegafrog.orderservice.domain.OrderLine;

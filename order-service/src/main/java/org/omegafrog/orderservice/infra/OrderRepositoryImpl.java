@@ -24,4 +24,10 @@ public class OrderRepositoryImpl implements OrderRepository {
 	public List<Order> findAll() {
 		return jpaRepository.findAll();
 	}
+
+	@Override
+	public Order findById(Long id) {
+		return jpaRepository.findById(id)
+			.orElseThrow(() -> new RuntimeException("Order not found"));
+	}
 }

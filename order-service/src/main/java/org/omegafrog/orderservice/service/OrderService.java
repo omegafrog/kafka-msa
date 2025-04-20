@@ -34,4 +34,8 @@ public class OrderService {
 	public List<OrderDto> getOrders() {
 		return orderRepository.findAll().stream().map(OrderDto::new).toList();
 	}
+
+	public OrderDto getOrder(Long id) {
+		return new OrderDto(orderRepository.findById(id));
+	}
 }
